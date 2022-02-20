@@ -1,0 +1,65 @@
+<div class="codepen" data-height="294" data-default-tab="js,result" data-slug-hash="JjOrevX" data-user="ayllaroccha"  data-prefill='{"title":"Projeto 2","tags":[],"scripts":["https://codepan.io/Java.js/pen/aBcDef"],"stylesheets":[]}'>
+  <pre data-lang="html">&lt;head>
+	&lt;meta charset="utf-8">
+	&lt;title>Validação de Senha&lt;/title>
+&lt;/head>
+&lt;body>
+  &lt;h1>Segurança de Senha &lt;/h1>
+  &lt;form>
+    &lt;!-- conexão com o código em JS-->
+    Senha: &lt;input type="password" name="senhaforca" id="senhaforca" onkeyup="validarsenhaforca()">&lt;br>&lt;br>
+    &lt;div id="impforcasenh">&lt;/div>
+    &lt;div id="impSenha">&lt;/div>
+    &lt;div id="imperrosenhaforca">&lt;/div>
+    
+   &lt;!--requisitos mínimos para uma senha segura-->
+    &lt;p>Sua senha deve conter:&lt;/p>
+    &lt;div>No mínimo 6 caracteres&lt;/div>
+    &lt;div>No mínimo 1 digito&lt;/div>
+    &lt;div>No mínimo 1 letra maiuscula&lt;/div>
+    &lt;div>No mínimo 1 letra minuscula&lt;/div>
+    &lt;div>No mínimo 1 caractere especial: !@#$%^&*()-+ &lt;/div>
+  &lt;/form>
+  &lt;!-- Conexão com JS-->
+  &lt;script src="https://codepan.io/Java.js/pen/aBcDef" type="text/javascript">&lt;/script>
+&lt;/body>
+&lt;/html></pre>
+  <pre data-lang="js">function validarsenhaforca(){
+  var senha = document.getElementById('senhaforca').value;
+  var forca = 0;
+  document.getElementById("impSenha").innerHTML= "";
+  
+  //código de requisitos minimos
+  if((senha.length >=6)) {
+    forca += 1;
+  }if((senha.length >=6) && (senha.match(/[1-9]+/))){
+    forca += 1;
+  }
+  if ((senha.length >=6) && (senha.match(/[a-z]+/))){
+    forca += 1;
+  }
+  if ((senha.length >=6) && (senha.match(/[A-Z]+/))){
+    forca += 1;
+  }
+  if ((senha.length >=6) && (senha.match(/[!@#$%^&*()-+]+/))){
+    forca += 1;
+  }
+   mostrarforca(forca)
+}
+//função onde possibilita segurança da senha aparecer (fraca, média, boa, segura)
+function mostrarforca(forca){
+  document.getElementById("impforcasenh").innerHTML = "Força: " + forca;
+
+ //configuração dos requisitos minimos   
+  if(forca &lt;= 2){
+      document.getElementById("imperrosenhaforca").innerHTML = "&lt;span style='color: #ff0000'>Fraca&lt;/span";
+  }else if ((forca > 2 ) && (forca &lt; 4)) {
+    document.getElementById("imperrosenhaforca").innerHTML = "&lt;span style='color: #ffD700'>Média&lt;/span";
+  }else if ((forca > 3 ) && (forca &lt; 5)) {
+    document.getElementById("imperrosenhaforca").innerHTML = "&lt;span style='color: #7fff00'>Forte&lt;/span";
+  }else if ((forca >= 5 ) && (forca &lt; 6)) {
+    document.getElementById("imperrosenhaforca").innerHTML = "&lt;span style='color: #008000'>Segura&lt;/span";
+  }
+}
+</pre></div>
+<script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
