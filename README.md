@@ -1,1 +1,3 @@
 # Desafio-Capgemini
+<h3>Projeto 1</h3>Linguagem Python foi utilizada para a criação do código. Pode ser executado no Google Colab (onde foi criado), sendo possível escolher o número de entrada, assim alterando o tamanho da escada na saída. <br> <br>
+<h3>Projeto 2 </h3>Feito com HTML e JAVASCRIPT, é uma página de verificação de senha, onde consiste em validar a força da senha inserida no espaço e classificar se é fraca, média, forte e segura.  Para rodar  a aplicação, é necessário  abrir no CodePen (onde foi criado), abrir uma nova caneta, anexar a parte HTML e JS no local informado, após isso é possível visualizar o teste web ao lado ou embaixo, onde tem a possibilidade de digitar a nova senha.
